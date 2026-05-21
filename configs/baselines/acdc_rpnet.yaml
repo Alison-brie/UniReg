@@ -1,0 +1,45 @@
+dataset: acdc
+compute_size: [16, 128, 128]
+
+arch: rpnet
+use_pre_align: false
+
+norm_strategy: mri_percentile
+
+pair_json: ${DATA_ROOT}/ACDC/ACDC_pairs.json
+
+train_root: ${DATA_ROOT}/ACDC/imagesTr
+train_seg_root: ${DATA_ROOT}/ACDC/labelsTr
+train_mask_root:
+
+val_root: ${DATA_ROOT}/ACDC/imagesTr
+val_seg_root: ${DATA_ROOT}/ACDC/labelsTr
+
+
+test_root: ${DATA_ROOT}/ACDC/imagesTs
+test_seg_root: ${DATA_ROOT}/ACDC/labelsTs
+test_mask_root:
+
+
+sim_loss: ncc
+ncc_win: [3, 9, 9]
+sim_weight: 1.0
+
+reg_loss: grad_l2
+reg_weight: 1.0
+
+lr: 1.0e-5
+batch_size: 1
+num_workers: 4
+
+epochs: 1000
+max_steps: 80000
+val_every: 1000
+save_every: 1000
+
+
+amp: true
+eval_in_raw: false
+seed: 42
+
+log_dir: ./logs/acdc_rpnet

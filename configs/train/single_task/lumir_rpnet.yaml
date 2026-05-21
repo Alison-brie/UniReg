@@ -1,0 +1,46 @@
+
+dataset: oasis
+compute_size: [192, 224, 160]
+
+arch: rpnet
+
+pair_json: ${DATA_ROOT}/OASIS/LUMIR_train_OASIS_val_test500.json
+
+
+train_root: ${DATA_ROOT}/LUMIR/imagesTr
+train_seg_root:
+train_mask_root:
+
+
+val_root: ${DATA_ROOT}/OASIS/imagesTr
+val_seg_root: ${DATA_ROOT}/OASIS/labelsTr
+val_mask_root: ${DATA_ROOT}/OASIS/masksTr
+
+test_root: ${DATA_ROOT}/OASIS/imagesTr
+test_seg_root: ${DATA_ROOT}/OASIS/labelsTr
+test_mask_root: ${DATA_ROOT}/OASIS/masksTr
+
+
+sim_loss: ncc
+ncc_win: 9
+sim_weight: 1.0
+
+reg_loss: grad_l2
+reg_weight: 1.0
+
+
+lr: 1.0e-4
+batch_size: 1
+num_workers: 4
+
+epochs: 1000
+max_steps: 80000
+val_every: 1000
+save_every: 1000
+num_repeats: 10
+
+seed: 42
+amp: true
+eval_in_raw: false
+
+log_dir: ./logs/lumir_rpnet

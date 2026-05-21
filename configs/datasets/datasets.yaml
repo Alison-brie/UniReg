@@ -1,0 +1,86 @@
+# UniReg dataset profiles.
+# Set DATA_ROOT before running, for example:
+#   export DATA_ROOT=/path/to/RegDataUnified
+
+chest_unified:
+  splits:
+    train: {root: "${DATA_ROOT}/Chest"}
+    val:   {root: "${DATA_ROOT}/Chest"}
+    test:  {root: "${DATA_ROOT}/Chest"}
+  compute_size: [160, 192, 192]
+  norm: ct_abdomen
+
+abdomen_unified:
+  splits:
+    train: {root: "${DATA_ROOT}/Abdomen"}
+    val:   {root: "${DATA_ROOT}/Abdomen"}
+    test:  {root: "${DATA_ROOT}/Abdomen"}
+  compute_size: [160, 192, 192]
+  norm: ct_abdomen
+
+head_unified:
+  splits:
+    train: {root: "${DATA_ROOT}/SegRap"}
+    val:   {root: "${DATA_ROOT}/SegRap"}
+    test:  {root: "${DATA_ROOT}/SegRap"}
+  compute_size: [160, 192, 192]
+  norm: ct_abdomen
+
+liver_unified:
+  splits:
+    train: {root: "${DATA_ROOT}/Liver"}
+    val:   {root: "${DATA_ROOT}/Liver"}
+    test:  {root: "${DATA_ROOT}/Liver"}
+  compute_size: [160, 192, 192]
+  norm: ct_abdomen
+
+oasis:
+  splits:
+    train:
+      img: "${DATA_ROOT}/LUMIR/imagesTr"
+      seg:
+      mask:
+    val:
+      img: "${DATA_ROOT}/OASIS/imagesTr"
+      seg: "${DATA_ROOT}/OASIS/labelsTr"
+      mask: "${DATA_ROOT}/OASIS/masksTr"
+    test:
+      img: "${DATA_ROOT}/OASIS/imagesTr"
+      seg: "${DATA_ROOT}/OASIS/labelsTr"
+      mask: "${DATA_ROOT}/OASIS/masksTr"
+  compute_size: [192, 224, 160]
+  norm: mri_percentile
+  pairing:
+    train: random
+    val: oasis_val
+    test: oasis_val
+
+acdc:
+  splits:
+    train:
+      img: "${DATA_ROOT}/ACDC/imagesTr"
+      seg: "${DATA_ROOT}/ACDC/labelsTr"
+    val:
+      img: "${DATA_ROOT}/ACDC/imagesTr"
+      seg: "${DATA_ROOT}/ACDC/labelsTr"
+    test:
+      img: "${DATA_ROOT}/ACDC/imagesTs"
+      seg: "${DATA_ROOT}/ACDC/labelsTs"
+  compute_size: [16, 128, 128]
+  norm: mri_percentile
+  pairing:
+    train: fixed_json
+    val: fixed_json
+    test: fixed_json
+
+dirqa:
+  splits:
+    val:
+      root: "${DATA_ROOT}/DIR-QA_processed"
+    test:
+      root: "${DATA_ROOT}/DIR-QA_processed"
+  compute_size: [96, 192, 192]
+  norm: dirqa_ct
+  pairing:
+    val: fixed_bidirectional
+    test: fixed_bidirectional

@@ -1,0 +1,28 @@
+dataset: abdomen_unified
+compute_size: [160, 192, 192]
+
+arch: rpnet
+use_pre_align: true
+
+sim_loss: ncc
+ncc_win: 9
+sim_weight: 1
+
+reg_loss: grad_l2
+reg_weight: 1
+
+
+lr: 1.0e-5
+batch_size: 1
+num_workers: 4
+
+epochs: 1000
+max_steps: 80000
+val_every: 1000
+save_every: 1000
+
+amp: false
+eval_in_raw: false
+seed: 42
+
+log_dir: ./logs/abdomen_rpnet_prealign_reg1

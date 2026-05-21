@@ -1,0 +1,21 @@
+dataset: liver_unified
+arch: unireg_rpn
+compute_size: [160, 192, 192]
+use_pre_align: false
+
+task_type: intra-subject
+task_type_id: 1
+task_id: liver
+task_id_id: 3
+
+
+sim_loss: ncc
+ncc_win: 9
+sim_weight: 1.0
+reg_loss: grad_l2
+reg_weight: 10.0
+
+batch_size: 1
+num_workers: 4
+amp: true
+eval_in_raw: false

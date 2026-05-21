@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# OS / editor
+.DS_Store
+__MACOSX/
+.vscode/
+.idea/
+*.swp
+
+# Environments
+.venv/
+venv/
+env/
+*.egg-info/
+build/
+dist/
+
+# Experiment outputs
+logs/
+outputs/
+runs/
+wandb/
+checkpoints/
+
+# Medical-image outputs and intermediate arrays
+*.nii
+*.nii.gz
+*.npy
+*.npz
+*.h5
+*.hdf5
+
+# Large training checkpoints are ignored by default,
+# but released model-zoo weights should be tracked.
+*.pth
+*.pt
+!model_zoo/
+!model_zoo/*.pth
+!model_zoo/*.pt
+!model_zoo/README.md
+!model_zoo/.gitkeep

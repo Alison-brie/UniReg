@@ -1,6 +1,6 @@
 # UniReg
 
-**UniReg** is a universal medical image registration framework with dynamic deformation generation. This clean release focuses on the UniReg main model and three lightweight baselines: **RPNet**, **IIRPNet**, and **CorrMLP**.
+**UniReg** is a universal medical image registration framework with dynamic deformation generation. This clean release focuses on the UniReg main model and two lightweight baselines: **RPNet** and **CorrMLP**.
 
 ## Highlights
 
@@ -121,4 +121,16 @@ python tools/check_checkpoint_compat.py \
   --config configs/eval/eval_brain_unireg_rpn.yaml \
   --checkpoint model_zoo/unireg_rpn_6task.pth \
   --device cpu
+```
+
+## Citation
+
+If you find UniReg helpful for your research and applications, please cite our paper:
+
+```bibtex
+@article{li2026unireg,
+  title   = {UniReg: A Universal Model for Controllable CT Medical Image Registration},
+  author  = {Li, Zi and Zhang, Jianpeng and Ma, Tai and Mok, Tony C. W. and Zhou, Yan-Jie and Chen, Zeli and Ye, Xianghua and Lu, Le and Chen, Cheng and Jin, Dakai},
+  year    = {2026}
+}
 ```

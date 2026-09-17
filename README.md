@@ -129,8 +129,9 @@ If you find UniReg helpful for your research and applications, please cite our p
 
 ```bibtex
 @article{li2026unireg,
-  title   = {UniReg: A Universal Model for Controllable CT Medical Image Registration},
+  title   = {UniReg: Conditional Unified Model for Medical Image Registration},
   author  = {Li, Zi and Zhang, Jianpeng and Ma, Tai and Mok, Tony C. W. and Zhou, Yan-Jie and Chen, Zeli and Ye, Xianghua and Lu, Le and Chen, Cheng and Jin, Dakai},
+  journal = {IEEE Trans. Circuits Syst. Video Technol.},
   year    = {2026}
 }
 ```
